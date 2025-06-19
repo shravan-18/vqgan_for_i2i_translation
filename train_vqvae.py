@@ -10,7 +10,7 @@ from vqvae import VQVAE
 from lpips import LPIPS
 from discriminator import Discriminator
 from torch.utils.data.dataloader import DataLoader
-from mnist_dataset import MnistDataset
+from dataset import Dataset
 from torch.optim import Adam
 from torchvision.utils import make_grid
 
@@ -44,7 +44,7 @@ def train(args):
                   model_config=autoencoder_config).to(device)
     # Create the dataset
     im_dataset_cls = {
-        'underwater': MnistDataset,
+        'underwater': Dataset,
     }.get(dataset_config['name'])
     
     train_dataset = im_dataset_cls(split='train',

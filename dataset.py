@@ -6,9 +6,9 @@ from tqdm import tqdm
 from torch.utils.data.dataset import Dataset
 
 
-class MnistDataset(Dataset):
+class tDataset(Dataset):
     r"""
-    Nothing special here. Just a simple dataset class for mnist images.
+    Nothing special here. Just a simple dataset class for underwater images.
     Created a dataset class rather using torchvision to allow
     replacement with any other image dataset
     """

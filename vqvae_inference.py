@@ -10,7 +10,7 @@ from vqvae import VQVAE
 from lpips import LPIPS
 from discriminator import Discriminator
 from torch.utils.data.dataloader import DataLoader
-from mnist_dataset import MnistDataset
+from dataset import Dataset
 import cv2
 from skimage.metrics import structural_similarity as ssim
 from skimage.metrics import peak_signal_noise_ratio as psnr
@@ -127,7 +127,7 @@ def infer(args):
     # Create validation dataset
     print("Loading validation dataset...")
     im_dataset_cls = {
-        'underwater': MnistDataset,
+        'underwater': Dataset,
     }.get(dataset_config['name'])
     
     if im_dataset_cls is None:
